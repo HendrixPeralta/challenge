@@ -56,6 +56,42 @@ def sq_sum(lst, i=None, total=None, result_carry=None):
 
     sq_sum(lst, i, result, result_carry)
 
+# def user_input):
+#     value = int(input())
+#     return value
 
-sq_sum(ls)
+
+def main(cycle=None, num=None, num_lst=None, i=None, j=None, result_list=None):
+
+    if cycle is None:
+        cycle = int(input())
+        print("cycle: " + str(cycle))
+        i = 0
+
+    if num is None:
+        num = int(input())
+        print("num: " + str(num))
+        num_lst = []
+        j = 0
+
+    if j < num:
+        num_lst.append(int(input()))
+        print("num_list: " + str(num_lst))
+        j += 1
+        main(cycle, num, num_lst, i, j)
+
+    i += 1
+
+    if i >= cycle:
+        print("finished")
+        return
+
+    main(cycle=cycle, i=i)
+
+    # print("i: " + str(i))
+    # print("cycle: " + str(cycle))
+
+
+main()
+#sq_sum(ls)
 
