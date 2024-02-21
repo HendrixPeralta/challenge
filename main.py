@@ -13,6 +13,7 @@ def sq_sum(lst, i, total):
     print("number: " + str(lst[i]))
     result = lst[i] ** 2 + total
     i += 1
+    print("result: " + str(result))
 
     if i >= len(lst):
         result = 0
