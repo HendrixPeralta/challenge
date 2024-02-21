@@ -50,17 +50,12 @@ def sq_sum(lst, i=None, total=None, result_carry=None):
 
         result_carry.append(result)
         print(result_carry)
-        return result_carry
+        # return result_carry
+        show_result(result_carry)
+        return
 
     sq_sum(lst, i, result, result_carry)
 
 
-def show_result(lst, i=None):
-    print(lst[i])
-    if lst[i] >= len(lst):
-        return
-    i += 1
-    show_result(lst, i)
-
-
 sq_sum(ls)
+
