@@ -1,8 +1,29 @@
 # init
 
-ls = [1, -3, 5, 5, 10]
+ls = [1, -3, 5, 6, 10]
 counter = 0
 suma = 0
+
+
+def check_neg(lst, i):
+    if lst[i] < 0:
+        i += 1
+        check_neg(lst, i)
+    return i
+
+
+def show_result(lst, i=None):
+    # print("im here")
+    # print(i)
+    print("print: " + str(lst[0]))
+    if i is None:
+        i = 0
+    # print("print" + str(lst[i]))
+    if lst[i] >= len(lst):
+        # print("second if")
+        return
+    i += 1
+    show_result(lst, i)
 
 
 def sq_sum(lst, i=None, total=None, result_carry=None):
@@ -12,14 +33,12 @@ def sq_sum(lst, i=None, total=None, result_carry=None):
         result_carry = []
 
     # Delete before sending *************
+    # print(lst)
     print("i: " + str(i))
     print("number: " + str(lst[i]))
 
     # checks if the number in the list is negative
-    if lst[i] < 0:
-        print("im here")
-        i += 1
-        sq_sum(lst, i, total, result_carry)
+    i = check_neg(lst, i)
 
     result = lst[i] ** 2 + total
     i += 1
