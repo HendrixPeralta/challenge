@@ -41,9 +41,7 @@ def main():
     cycle = int(input())
     result = []
     compute(cycle, result)
-    print(result)
     show_result(result)
-    print("finished")
 
 
 if __name__ == "__main__":
