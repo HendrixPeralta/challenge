@@ -1,15 +1,3 @@
-# init
-
-ls = [1, -3, 5, 6, 10]
-counter = 0
-suma = 0
-
-
-def check_neg(lst, i):
-    if lst[i] < 0:
-        i += 1
-        check_neg(lst, i)
-    return i
 
 def show_result(num_list, i=0):
     if i >= len(num_list):
