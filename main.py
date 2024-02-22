@@ -26,9 +26,8 @@ def show_result(lst, i=None):
     show_result(lst, i)
 
 
-def sq_sum(num_list, i=0, result_carry=None):
-    if i >= len(num_list):
-        print(sum(result_carry))
+def sq_sum(num_list, i=0, n=None, result_carry=None):
+    if n == 0:
         return sum(result_carry)
 
     if result_carry is None:
@@ -36,6 +35,7 @@ def sq_sum(num_list, i=0, result_carry=None):
 
     result_carry.append(num_list[i] ** 2)
     sq_sum(num_list, i+1, result_carry)
+    return sq_sum(num_list, i+1, n-1, result_carry)
 
 
 def fill_num(num_list, n):
@@ -51,9 +51,8 @@ def compute(cycle, result):
     num = int(input())
     num_list = []
     fill_num(num_list, num)
-    print(num_list)
-    result.append(sq_sum(num_list))
-    compute(cycle-1, result)
+    result.append(sq_sum(num_list, n=len(num_list)))
+    compute(cycle-1, result=result)
 
 
 def main():
