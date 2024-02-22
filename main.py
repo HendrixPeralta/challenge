@@ -67,29 +67,32 @@ def fill_num(num_list, n):
     num_list.append(max(0, int(input())))
     fill_num(num_list, n-1)
 
-def main(cycle=None, num=None, num_lst=None, i=None, j=None, result_list=None):
 
-    if cycle is None:
-        cycle = int(input())
-        print("cycle: " + str(cycle))
-        i = 0
-
-    if num is None:
-        num = int(input())
-        print("num: " + str(num))
-        num_lst = []
-        j = 0
-
-    if i >= cycle:
-        print("finished")
+def compute(cycle, result):
+    if result is None:
+        result = []
+    if cycle == 0:
         return
+    num = int(input())
+    num_list = []
+    sq_result =[]
+    fill_num(num_list, num)
+    result.append(sq_sum(num_list=num_list, sq_result=sq_result))
+    print(result)
+    compute(cycle-1, result)
 
-    main(cycle=cycle, i=i)
 
-    # print("i: " + str(i))
-    # print("cycle: " + str(cycle))
+def main():
+    cycle = int(input())
+    result = []
+    compute(cycle, result)
+    print(result)
+    show_result(result)
+    print("finished")
+
 
 
 main()
-#sq_sum(ls)
+
+
 
