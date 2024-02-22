@@ -11,19 +11,11 @@ def check_neg(lst, i):
         check_neg(lst, i)
     return i
 
-
-def show_result(lst, i=None):
-    # print("im here")
-    # print(i)
-    print("print: " + str(lst[0]))
-    if i is None:
-        i = 0
-    # print("print" + str(lst[i]))
-    if lst[i] >= len(lst):
-        # print("second if")
+def show_result(num_list, i=0):
+    if i >= len(num_list):
         return
-    i += 1
-    show_result(lst, i)
+    print(num_list[i])
+    show_result(num_list, i+1)
 
 
 def sq_sum(num_list, i=0, n=None, result_carry=None):
@@ -34,8 +26,10 @@ def sq_sum(num_list, i=0, n=None, result_carry=None):
         result_carry = []
 
     result_carry.append(num_list[i] ** 2)
-    sq_sum(num_list, i+1, result_carry)
     return sq_sum(num_list, i+1, n-1, result_carry)
+
+# def sq_sum(num_lst):
+#     return sum(list(map(lambda x: x**2, num_lst)))
 
 
 def fill_num(num_list, n):
