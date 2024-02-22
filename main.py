@@ -61,6 +61,12 @@ def sq_sum(lst, i=None, total=None, result_carry=None):
 #     return value
 
 
+def fill_num(num_list, n):
+    if n == 0:
+        return
+    num_list.append(max(0, int(input())))
+    fill_num(num_list, n-1)
+
 def main(cycle=None, num=None, num_lst=None, i=None, j=None, result_list=None):
 
     if cycle is None:
@@ -73,14 +79,6 @@ def main(cycle=None, num=None, num_lst=None, i=None, j=None, result_list=None):
         print("num: " + str(num))
         num_lst = []
         j = 0
-
-    if j < num:
-        num_lst.append(int(input()))
-        print("num_list: " + str(num_lst))
-        j += 1
-        main(cycle, num, num_lst, i, j)
-
-    i += 1
 
     if i >= cycle:
         print("finished")
