@@ -8,20 +8,39 @@ def show_result(num_list, i=0):
 
 # Creates a list with the squared input
 # Negative numbers are converted to 0 to comply with the challenge rules
-def fill_num(num_list, n):
-    if n == 0:
+# def fill_num(num_list, n):
+#     if n == 0:
+#         return
+#     num_list.append(max(0, int(input()))**2)
+#     fill_num(num_list, n-1)
+
+
+def char_to_list(num_list, n, num_str=None, i=0, current=None,):
+    if n == len(num_list):
         return
-    num_list.append(max(0, int(input()))**2)
-    fill_num(num_list, n-1)
+
+    if current is None:
+        current = ""
+
+    current += num_str[i]
+
+    if num_str[i] == " " or i == len(num_str)-1:
+        num_list.append(int(current)**2)
+        current = ""
+        return char_to_list(num_list, n, num_str, i+1)
+
+    return char_to_list(num_list, n, num_str, i+1, current)
 
 
 # the sum of squares is done when appending the squared list from fill_num() to the result list
 def compute(cycle, result):
     if cycle == 0:
         return
-    num = int(input())
+    n = int(input("length"))
     num_list = []
-    fill_num(num_list, num)
+    #fill_num(num_list, num)
+    num_str = input()
+    char_to_list(num_list, n, num_str)
     result.append(sum(num_list))
     compute(cycle-1, result)
 
@@ -35,4 +54,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
