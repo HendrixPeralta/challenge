@@ -6,8 +6,8 @@ def show_result(num_list, i=0):
     show_result(num_list, i+1)
 
 
-# Negative numbers are converted to 0 to comply with the challenge rules
 # Creates a list with the squared input
+# Negative numbers are converted to 0 to comply with the challenge rules
 def fill_num(num_list, n):
     if n == 0:
         return
@@ -16,6 +16,7 @@ def fill_num(num_list, n):
 
 
 # Negative numbers are converted to 0  to avoid unintended behaviour
+# the sum of squares is done when appending the squared list from fill_num() to the result list
 def compute(cycle, result):
     if cycle == 0:
         return
