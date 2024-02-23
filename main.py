@@ -24,7 +24,7 @@ def compute(cycle, result):
     num_list = []
     fill_num(num_list, num)
     result.append(sum(num_list))
-    compute(cycle-1, result=result)
+    compute(cycle-1, result)
 
 
 # Negative numbers are converted to 0  avoid unintended behaviour
