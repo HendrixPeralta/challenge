@@ -15,23 +15,8 @@ def show_result(num_list, i=0):
 #     fill_num(num_list, n-1)
 
 def sq_sum(num_char, result):
-    result.append(sum(list(map(lambda x: int(x)**2, (num_char.split(" "))))))
-
-# def char_to_list(num_list, n, num_str=None, i=0, current=None,):
-#     if n == len(num_list):
-#         return
-#
-#     if current is None:
-#         current = ""
-#
-#     current += num_str[i]
-#
-#     if num_str[i] == " " or i == len(num_str)-1:
-#         num_list.append(int(current)**2)
-#         current = ""
-#         return char_to_list(num_list, n, num_str, i+1)
-#
-#     return char_to_list(num_list, n, num_str, i+1, current)
+    clean_list = map(lambda x: max(0, int(x)), num_char.split(" "))
+    result.append(sum(list(map(lambda x: int(x)**2, clean_list))))
 
 
 # the sum of squares is done when appending the squared list from fill_num() to the result list
