@@ -14,15 +14,8 @@ def show_result(num_list, i=0):
 #     num_list.append(max(0, int(input()))**2)
 #     fill_num(num_list, n-1)
 
-
-def char_to_list(num_list, n, num_str=None, i=0, current=None,):
-    if n == len(num_list):
-        return
-
-    if current is None:
-        current = ""
-
-    current += num_str[i]
+def sq_sum(num_char, result):
+    result.append(sum(list(map(lambda x: int(x)**2, (num_char.split(" "))))))
 
     if num_str[i] == " " or i == len(num_str)-1:
         num_list.append(int(current)**2)
