@@ -15,21 +15,19 @@ def fill_num(num_list, n):
     fill_num(num_list, n-1)
 
 
-# Negative numbers are converted to 0  to avoid unintended behaviour
 # the sum of squares is done when appending the squared list from fill_num() to the result list
 def compute(cycle, result):
     if cycle == 0:
         return
-    num = max(0, int(input()))
+    num = int(input())
     num_list = []
     fill_num(num_list, num)
     result.append(sum(num_list))
     compute(cycle-1, result)
 
 
-# Negative numbers are converted to 0  avoid unintended behaviour
 def main():
-    cycle = max(0, int(input()))
+    cycle = int(input())
     result = []
     compute(cycle, result)
     show_result(result)
