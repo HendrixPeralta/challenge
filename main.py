@@ -24,10 +24,9 @@ def compute(cycle, result):
     if cycle == 0:
         return
     n = int(input("length"))
-    num_str = input()
-    sq_sum(num_str, result)
     num_list = input().split(" ")  # Converts the string into a string list.
     result_carry = []
+    result.append(sq_sum(num_list=num_list, n=n, result_carry=result_carry))
     compute(cycle-1, result)
 
 
