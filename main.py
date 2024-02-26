@@ -1,6 +1,8 @@
 def show_result(result, i=0):
-    result_str = str(result).replace("[", "").replace("]", "").replace(", ", "\n")
-    print(result_str)
+    if i >= len(result):
+        return
+    print(result[i])
+    show_result(result, i+1)
 
 
 def sq_sum(num_char, result):
