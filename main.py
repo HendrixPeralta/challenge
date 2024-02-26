@@ -26,6 +26,8 @@ def compute(cycle, result):
     n = int(input("length"))
     num_str = input()
     sq_sum(num_str, result)
+    num_list = input().split(" ")  # Converts the string into a string list.
+    result_carry = []
     compute(cycle-1, result)
 
 
